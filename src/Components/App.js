@@ -6,6 +6,7 @@ import Homepage from './Homepage';
 import RecipeList from './RecipeList';
 import NewRecipeForm from './NewRecipeForm';
 import { useEffect, useState } from "react";
+import Search from "./Search";
 
 function App() {
 
@@ -18,6 +19,14 @@ function App() {
       .then(data=>setRecipes(data))
   }, [])
 
+const[searchString, setSearch] = useState("")
+
+function handleSearch(newSearch){
+  setSearch(newSearch)
+}
+
+
+//const filteredRecipes = recipes.filter(recipe=>recipe.ingredients.toLowerCase().includes(searchString.toLowerCase()))
   return (
     <div>
       <NavBar></NavBar>
@@ -26,6 +35,7 @@ function App() {
             <Homepage />
           </Route>
           <Route path="/recipes">
+            <Search handleSearch={handleSearch}/>
             <RecipeList recipes={recipes} />
           </Route>
           <Route path="/new">
