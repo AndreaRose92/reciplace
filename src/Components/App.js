@@ -1,5 +1,7 @@
 
+
 import { Route, Switch } from "react-router-dom"
+import NavBar from "./NavBar"
 import Homepage from './Homepage';
 import RecipeList from './RecipeList';
 import NewRecipeForm from './NewRecipeForm';
@@ -17,17 +19,20 @@ function App() {
   }, [])
 
   return (
-    <Switch>
-      <Route exact path="/">
-        <Homepage />
-      </Route>
-      <Route path="/recipes">
-        <RecipeList recipes={recipes} />
-      </Route>
-      <Route path="/new">
-        <NewRecipeForm />
-      </Route>
-    </Switch>
+    <div>
+      <NavBar></NavBar>
+        <Switch>
+          <Route exact path="/">
+            <Homepage />
+          </Route>
+          <Route path="/recipes">
+            <RecipeList recipes={recipes} />
+          </Route>
+          <Route path="/new">
+            <NewRecipeForm />
+          </Route>
+        </Switch>
+    </div>
   );
 }
 
