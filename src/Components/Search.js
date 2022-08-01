@@ -1,15 +1,16 @@
+import React from "react"
 
 
-
-export default function Search() {
+export default function Search({handleSearch}) {
     return (
         <div className="searchbar">
             <input
             type="text"
             id="search"
-            placeholder="Type a name to search..."
-        />
-            <p>Here you can search by ingredients.</p>
+            placeholder="Type a ingredient to search..."
+            onChange={(e) => handleSearch(e.target.value) }
+            />
+            <button>search</button>
         </div>
     )
 }
