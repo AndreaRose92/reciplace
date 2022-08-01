@@ -14,6 +14,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+input {
+  margin: 10px;
+}
+textarea {
+  margin: 10px;
+}
+.ingredient {
+  margin: 0px
+}
+
+.recipeForm {
+  display: flexbox;
+  text-align: center;
+  padding: 10px;
+}
+
 .navbar {
   background-color: bisque;
 }

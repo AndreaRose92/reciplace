@@ -12,6 +12,7 @@ function App() {
 
   // const url = `http://localhost:3000/recipes`
   const [recipes, setRecipes] = useState([])
+  const [newRecipe, setNewRecipe] = useState({})
 
   useEffect(()=>{
     fetch(`http://localhost:3000/recipes`)
@@ -19,14 +20,19 @@ function App() {
       .then(data=>setRecipes(data))
   }, [])
 
-const[searchString, setSearch] = useState("")
+  const addNewRecipe = e => {
+    e.preventDefault();
+    fetch('http://localhost:3000/recipes', {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({
+        "name": e.target.title.value
+      })
+    })
+      .then(r=>r.json())
+      .then(data=>console.log(data))
+  }
 
-function handleSearch(newSearch){
-  setSearch(newSearch)
-}
-
-
-//const filteredRecipes = recipes.filter(recipe=>recipe.ingredients.toLowerCase().includes(searchString.toLowerCase()))
   return (
     <div>
       <NavBar></NavBar>
@@ -35,11 +41,10 @@ function handleSearch(newSearch){
             <Homepage />
           </Route>
           <Route path="/recipes">
-            <Search handleSearch={handleSearch}/>
             <RecipeList recipes={recipes} />
           </Route>
           <Route path="/new">
-            <NewRecipeForm />
+            <NewRecipeForm handleSubmit={addNewRecipe} />
           </Route>
         </Switch>
     </div>
