@@ -1,10 +1,15 @@
 
+import ImageCard from "./ImageCard"
+
+export default function RecipeList({recipes}) {
 
 
-export default function RecipeList() {
+
+    const renderThumbnails = recipes.map(recipe=> <ImageCard key={recipe.id} name={recipe.name} image={recipe.image} />)
+
     return (
-        <ul>
-            <p>This will be full of recipes</p>
-        </ul>
+        <div>
+            {renderThumbnails}
+        </div>
     )
 }
