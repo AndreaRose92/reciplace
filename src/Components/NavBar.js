@@ -5,7 +5,7 @@ const linkStyles = {
     // width: "50px",
     padding: "12px",
     margin: "0 6px 6px",
-    background: "blue",
+    background: "orange",
     textDecoration: "none",
     color: "white",
   };
@@ -17,7 +17,7 @@ export default function NavBar() {
                 to='/'
                 exact
                 style={linkStyles}
-                activeStyle={{background: "darkblue"}}
+                activeStyle={{background: "crimson"}}
             >
                 Home
             </NavLink>
@@ -25,7 +25,7 @@ export default function NavBar() {
                 to='/recipes'
                 exact
                 style={linkStyles}
-                activeStyle={{background: "darkblue"}}
+                activeStyle={{background: "crimson"}}
             >
                 Recipes                
             </NavLink>
@@ -33,7 +33,7 @@ export default function NavBar() {
                 to='/new'
                 exact
                 style={linkStyles}
-                activeStyle={{background: "darkblue"}}
+                activeStyle={{background: "crimson"}}
             >
                 New Recipe
             </NavLink>
