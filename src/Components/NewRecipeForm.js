@@ -12,7 +12,6 @@ export default function NewRecipeForm({addNewRecipe}) {
     const [ingredientsArray, setIngredientsArray] = useState([])
     const [directionsArray, setDirectionsArray] = useState([])
 
-
     const newRecipe = {
         "name": recipeTitle,
         "meal": recipeMeal,
@@ -20,27 +19,22 @@ export default function NewRecipeForm({addNewRecipe}) {
         "ingredients": ingredientsArray,
         "directions": directionsArray
     }
-
     const removeIngredient = e => {
         e.preventDefault();
         setIngredients(ingredients.filter(ingredient => ingredient.id !== ingredients.length))
     }
-
     const addIngredient = e => {
         e.preventDefault()
         setIngredients([...ingredients, {id: ingredients.length+1, text: ''}])
     }
-   
     const removeDirection = e => {
         e.preventDefault();
         setDirections(directions.filter(direction => direction.id !== directions.length))
     }
-
     const addDirection = e => {
         e.preventDefault()
         setDirections([...directions, {id: directions.length+1, text: ''}])
     }
-
     const handleSubmit = e => {
         e.preventDefault()
         e.target.reset()
