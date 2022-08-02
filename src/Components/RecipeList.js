@@ -14,7 +14,7 @@ export default function RecipeList({recipes}) {
 
     const filteredRecipes = recipes.filter(recipe => recipe.ingredients.some(ingredient => ingredient.toLowerCase().includes(searchString.toLowerCase()) ))
 
-    const renderThumbnails = filteredRecipes.map(recipe=> <ImageCard key={recipe.id} name={recipe.name} image={recipe.image} ingredients={recipe.ingredients} />)
+    const renderThumbnails = filteredRecipes.map(recipe=> <ImageCard key={recipe.id} recipe={recipe} />)
 
     return (
         <div className="cards">
