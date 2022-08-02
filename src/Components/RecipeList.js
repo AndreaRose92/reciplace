@@ -10,17 +10,26 @@ export default function RecipeList({recipes}) {
 
     const match = useRouteMatch()
     const[searchString, setSearch] = useState("")
+    let [mealType, setMealType] = useState('All')
 
     function handleSearch(data){
         setSearch(data)
     }
 
-    const filteredRecipes = recipes.filter(recipe => recipe.ingredients.some(ingredient => ingredient.toLowerCase().includes(searchString.toLowerCase()) ))
+    function handleChange(data) {
+        setMealType(data)
+    }
+
+    const mealsbyType = recipes.filter(recipe => 
+        mealType === 'All' ? true : recipe.meal === mealType
+    )
+
+    const filteredRecipes = mealsbyType.filter(recipe => recipe.ingredients.some(ingredient => ingredient.toLowerCase().includes(searchString.toLowerCase()) ))
 
 
     return (
         <div className="cards">
-            <Search handleSearch={handleSearch}/>
+            <Search handleSearch={handleSearch} filterType={handleChange} />
             <RecipeCards recipes={filteredRecipes}/>
             <Route path={`${match.url}/:recipeID`}>
                 <RecipePage recipes={filteredRecipes} />
