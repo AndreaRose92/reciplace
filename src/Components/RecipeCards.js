@@ -1,7 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Route, useRouteMatch } from "react-router-dom";
-import RecipePage from "./RecipePage";
+
 
 export default function RecipeCards({recipes}) {
 
