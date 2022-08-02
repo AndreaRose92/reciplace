@@ -8,7 +8,7 @@ export default function Search({handleSearch}) {
     const searchSubmit = (e) => {
         e.preventDefault()
         handleSearch(search)
-
+        
     }
 
     return (
