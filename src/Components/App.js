@@ -10,7 +10,6 @@ import RecipePage from "./RecipePage";
 
 function App() {
 
-  // const url = `http://localhost:3000/recipes`
   const [recipes, setRecipes] = useState([])
 
   useEffect(()=>{

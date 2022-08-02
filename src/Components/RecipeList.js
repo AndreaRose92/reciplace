@@ -15,7 +15,6 @@ export default function RecipeList({recipes}) {
     function handleSearch(data){
         setSearch(data)
     }
-
     function handleChange(data) {
         setMealType(data)
     }
@@ -23,9 +22,7 @@ export default function RecipeList({recipes}) {
     const mealsbyType = recipes.filter(recipe => 
         mealType === 'All' ? true : recipe.meal === mealType
     )
-
     const filteredRecipes = mealsbyType.filter(recipe => recipe.ingredients.some(ingredient => ingredient.toLowerCase().includes(searchString.toLowerCase()) ))
-
 
     return (
         <div className="cards">

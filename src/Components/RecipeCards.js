@@ -4,23 +4,16 @@ import { Link } from "react-router-dom";
 
 export default function RecipeCards({recipes}) {
 
-    // const renderThumbnails = recipes.map(recipe=> (
-    //         <div key={recipe.id} className="card" >
-    //             <h3>{recipe.name}</h3>
-    //             <Link to={`/recipe/${recipe.id}`}>
-    //                 <img src={recipe.image} alt={recipe.name} />
-    //             </Link>
-    //         </div>
-    // ))
+    // console.log(recipes)
 
-    const renderThumbnails = Object.keys(recipes).map((recipeID) => 
-        <div className="card" key={recipeID}>
-            <Link to={`/recipe/${recipeID}`}>
-                <h3>{recipes[recipeID].name}</h3>
-                <img src={recipes[recipeID].image} alt={recipes[recipeID].title}/>
+    const renderThumbnails = recipes.map(recipe => 
+        <div key={recipe.id} className="card"> 
+            <Link to={`/recipe/${recipe.id-1}`}>
+                <h3>{recipe.name}</h3>
+                <img src={recipe.image} alt={recipe.name} />
             </Link>
-        </div>
-    )
+        </div>     
+        )
 
     return (
         <div className="cards" >{renderThumbnails}</div>
