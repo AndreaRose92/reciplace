@@ -10,12 +10,13 @@ export default function RecipePage({recipes}) {
     const renderDirections = recipe.directions.map(directions => <p key={Math.random()} >{directions}</p>)
 
     return (
-        <div>
-            <h3>{recipe.name}</h3>
+        <div className="card">
+            <h2>{recipe.name}</h2>
             <img src={recipe.image} alt={recipe.name}></img>
+            <h3>Ingredients</h3>
             <ul>{renderIngredients}</ul>
+            <h3>Directions</h3>
             <ul>{renderDirections}</ul>
-
         </div>
     )
 }
