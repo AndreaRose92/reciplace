@@ -1,11 +1,14 @@
 
 import { useState } from "react"
-import ImageCard from "./ImageCard"
+import { Route, useRouteMatch } from "react-router-dom"
+import RecipeCards from './RecipeCards'
+import RecipePage from "./RecipePage"
 import Search from "./Search"
 
 
 export default function RecipeList({recipes}) {
 
+    const match = useRouteMatch()
     const[searchString, setSearch] = useState("")
 
     function handleSearch(data){
@@ -14,12 +17,14 @@ export default function RecipeList({recipes}) {
 
     const filteredRecipes = recipes.filter(recipe => recipe.ingredients.some(ingredient => ingredient.toLowerCase().includes(searchString.toLowerCase()) ))
 
-    const renderThumbnails = filteredRecipes.map(recipe=> <ImageCard key={recipe.id} recipe={recipe} />)
 
     return (
         <div className="cards">
             <Search handleSearch={handleSearch}/>
-            {renderThumbnails}
+            <RecipeCards recipes={filteredRecipes}/>
+            <Route path={`recipe/:recipeID`}>
+                <RecipePage recipes={filteredRecipes} />
+            </Route>
         </div>
     )
 }

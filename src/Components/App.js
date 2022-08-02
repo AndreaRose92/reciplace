@@ -6,6 +6,7 @@ import Homepage from './Homepage';
 import RecipeList from './RecipeList';
 import NewRecipeForm from './NewRecipeForm';
 import { useEffect, useState } from "react";
+import RecipePage from "./RecipePage";
 
 function App() {
 
@@ -40,6 +41,9 @@ function App() {
           </Route>
           <Route path="/new">
             <NewRecipeForm addNewRecipe={addNewRecipe} />
+          </Route>
+          <Route path="/recipe/:recipeID">
+            <RecipePage recipes={recipes} />
           </Route>
         </Switch>
     </div>
