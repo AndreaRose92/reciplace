@@ -13,13 +13,13 @@ function App() {
   const [recipes, setRecipes] = useState([])
 
   useEffect(()=>{
-    fetch(`http://localhost:3000/recipes`)
+    fetch(`https://reciplace.herokuapp.com/recipes`)
       .then(r=>r.json())
       .then(data=>setRecipes(data))
   }, [])
 
   const addNewRecipe = newRecipe => {
-    fetch('http://localhost:3000/recipes', {
+    fetch('https://reciplace.herokuapp.com/recipes', {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(newRecipe)
