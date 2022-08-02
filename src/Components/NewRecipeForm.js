@@ -2,14 +2,22 @@ import { useState } from "react"
 
 
 
-export default function NewRecipeForm({handleSubmit}) {
+export default function NewRecipeForm({addNewRecipe}) {
 
-    const [ingredients, setIngredients] = useState([{id: 1}])
+    const [ingredients, setIngredients] = useState([{id: 1, text: ''}])
+    const [recipeTitle, setRecipeTitle] = useState('')
+    const [recipeMeal, setRecipeMeal] = useState('breakfast')
+    const [recipeImage, setRecipeImage] = useState('https://thumbs.dreamstime.com/b/white-empty-dinner-plate-blue-border-wooden-table-93048343.jpg')
+    const [recipeDirections, setRecipeDirections] = useState('')
+    const [ingredientsArray, setIngredientsArray] = useState([])
 
-    // function handleSubmit(e) {
-    //     e.preventDefault()
-    //     console.log("Please work")
-    // }
+    const newRecipe = {
+        "name": recipeTitle,
+        "meal": recipeMeal,
+        "image": recipeImage,
+        "ingredients": ingredientsArray,
+        "directions": recipeDirections
+    }
 
     const removeIngredient = e => {
         e.preventDefault();
@@ -18,32 +26,39 @@ export default function NewRecipeForm({handleSubmit}) {
 
     const addIngredient = e => {
         e.preventDefault()
-        setIngredients([...ingredients, {id: ingredients.length+1}])
+        setIngredients([...ingredients, {id: ingredients.length+1, text: ''}])
+    }
+
+    const handleSubmit = e => {
+        e.preventDefault()
+        e.target.reset()
+        ingredients.forEach(ingredient => setIngredientsArray(ingredientsArray.push(ingredient.text)))
+        addNewRecipe(newRecipe)    
     }
 
     return (
         <div>
-            <form className="recipeForm">
-                <input type="text" name="title" placeholder="Recipe Title" /><br/>
+            <form onSubmit={handleSubmit} className="recipeForm">
+                <input onChange={e=>setRecipeTitle(e.target.value)} type="text" name="title" placeholder="Recipe Title" /><br/>
                 <label htmlFor="meal">Meal: </label>
-                <select id="meal" name="meal">
+                <select onChange={e=>setRecipeMeal(e.target.value)} id="meal" name="meal">
                     <option name="breakfast">Breakfast</option>
                     <option name="lunch">Lunch</option>
                     <option name="dinner">Dinner</option>
                     <option name="dessert">Dessert</option>
                 </select><br/>
-                <input type='text' name='image' placeholder="Image URL" />
+                <input onChange={e=>setRecipeImage(e.target.value)} type='text' name='image' placeholder="Image URL" />
                 {ingredients.map(row => (
-                    <div key={row.id} >
-                        <input className="ingredient" type="text" name="ingredient" placeholder={`Ingredient ${row.id}`}></input>
+                    <div  key={row.id} >
+                        <input onChange={e=> {row.text = e.target.value }} className="ingredient" type="text" name={`ingredient${row.id}`} placeholder={`Ingredient ${row.id}`}></input>
                         <button onClick={(e)=>addIngredient(e)}
                         >Add</button>
                         <button onClick={(e)=>removeIngredient(e)}
                         >Remove</button>
                     </div>
                 ))}
-                <textarea name="directions" placeholder="Directions"></textarea><br/>
-                <button onClick={(e)=>handleSubmit(e)} type="submit">Add to CookBook</button>
+                <textarea onChange={e=>setRecipeDirections(e.target.value)} name="directions" placeholder="Directions"></textarea><br/>
+                <button type="submit">Add to CookBook</button>
             </form>
         </div>
     )

@@ -8,8 +8,8 @@ export default function RecipeList({recipes}) {
 
     const[searchString, setSearch] = useState("")
 
-    function handleSearch(newSearch){
-      setSearch(newSearch)
+    function handleSearch(data){
+        setSearch(data)
     }
 
     const filteredRecipes = recipes.filter(recipe => recipe.ingredients.some(ingredient => ingredient.toLowerCase().includes(searchString.toLowerCase()) ))

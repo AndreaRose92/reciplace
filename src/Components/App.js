@@ -6,13 +6,11 @@ import Homepage from './Homepage';
 import RecipeList from './RecipeList';
 import NewRecipeForm from './NewRecipeForm';
 import { useEffect, useState } from "react";
-import Search from "./Search";
 
 function App() {
 
   // const url = `http://localhost:3000/recipes`
   const [recipes, setRecipes] = useState([])
-  const [newRecipe, setNewRecipe] = useState({})
 
   useEffect(()=>{
     fetch(`http://localhost:3000/recipes`)
@@ -20,17 +18,14 @@ function App() {
       .then(data=>setRecipes(data))
   }, [])
 
-  const addNewRecipe = e => {
-    e.preventDefault();
+  const addNewRecipe = newRecipe => {
     fetch('http://localhost:3000/recipes', {
       method: "POST",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({
-        "name": e.target.title.value
-      })
+      body: JSON.stringify(newRecipe)
     })
       .then(r=>r.json())
-      .then(data=>console.log(data))
+      .then(data=>setRecipes(recipes => [...recipes, data]))
   }
 
   return (
@@ -44,7 +39,7 @@ function App() {
             <RecipeList recipes={recipes} />
           </Route>
           <Route path="/new">
-            <NewRecipeForm handleSubmit={addNewRecipe} />
+            <NewRecipeForm addNewRecipe={addNewRecipe} />
           </Route>
         </Switch>
     </div>
