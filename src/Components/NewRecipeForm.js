@@ -49,38 +49,44 @@ export default function NewRecipeForm({addNewRecipe}) {
         <div>
             <form onSubmit={handleSubmit} className="recipeForm">
                 <h4>New Recipe</h4>
-                <input onChange={e=>setRecipeTitle(e.target.value)} type="text" name="title" placeholder="Recipe Title" /><br/>
-                <label htmlFor="meal">Meal: </label>
-                <select onChange={e=>setRecipeMeal(e.target.value)} id="meal" name="meal">
-                    <option name="breakfast">Breakfast</option>
-                    <option name="lunch">Lunch</option>
-                    <option name="dinner">Dinner</option>
-                    <option name="dessert">Dessert</option>
-                </select><br/>
-                <input onChange={e=>setRecipeImage(e.target.value)} type='text' name='image' placeholder="Image URL" />
-                <div className="ingredientsContainer">
-                    {ingredients.map(row => (
-                        <div key={row.id} >
-                            <input onChange={e=> {row.text = e.target.value }} className="ingredient" type="text" name={`ingredient${row.id}`} placeholder={`Ingredient ${row.id}`}></input>
-                            <button onClick={(e)=>addIngredient(e)}
-                            >Add</button>
-                            <button onClick={(e)=>removeIngredient(e)}
-                            >Remove</button>
-                        </div>
-                    ))}
+                <div >    
+                    <input className="singleInputs" onChange={e=>setRecipeTitle(e.target.value)} type="text" name="title" placeholder="Recipe Title" /><br/>
+                    <label htmlFor="meal">Meal: </label>
+                    <select className="singleInputs" onChange={e=>setRecipeMeal(e.target.value)} id="meal" name="meal">
+                        <option name="breakfast">Breakfast</option>
+                        <option name="lunch">Lunch</option>
+                        <option name="dinner">Dinner</option>
+                        <option name="dessert">Dessert</option>
+                    </select><br/>
+                    <input className="singleInputs" onChange={e=>setRecipeImage(e.target.value)} type='text' name='image' placeholder="Image URL" />
                 </div>
-                <div className="directionsContainer">
-                    {directions.map(row => (
-                        <div key={row.id} >
-                            <input onChange={e=> {row.text = e.target.value}} className="direction" type="text" name={`direction${row.id}`} placeholder={`Step ${row.id}`}></input>
-                            <button onClick={(e)=>addDirection(e)}
-                            >Add</button>
-                            <button onClick={(e)=>removeDirection(e)}
-                            >Remove</button>
-                        </div>
-                    ))}
+                <div className="listInputs">
+                    <div className="ingredientsContainer">
+                        <h3>Ingredients:</h3>
+                        {ingredients.map(row => (
+                            <div key={row.id} >
+                                <input onChange={e=> {row.text = e.target.value }} className="ingredient" type="text" name={`ingredient${row.id}`} placeholder={`Ingredient ${row.id}`}></input>
+                                <button onClick={(e)=>addIngredient(e)}
+                                >Add</button>
+                                {row.id > 1 ? <button onClick={(e)=>removeIngredient(e)}
+                                >X</button> : null }
+                            </div>
+                        ))}
+                    </div>
+                    <div className="directionsContainer">
+                        <h3>Directions:</h3>
+                        {directions.map(row => (
+                            <div key={row.id} >
+                                <input onChange={e=> {row.text = e.target.value}} className="direction" type="text" name={`direction${row.id}`} placeholder={`Step ${row.id}`}></input>
+                                <button onClick={(e)=>addDirection(e)}
+                                >Add</button>
+                                {row.id > 1 ? <button onClick={(e)=>removeDirection(e)}
+                                >X</button> : null }
+                            </div>
+                        ))}
+                    </div>
                 </div>
-                <button type="submit">Add to CookBook</button>
+                <button className="add" type="submit">Add to CookBook</button>
             </form>
         </div>
     )
