@@ -58,7 +58,7 @@ export default function NewRecipeForm({addNewRecipe}) {
                     <option name="dessert">Dessert</option>
                 </select><br/>
                 <input onChange={e=>setRecipeImage(e.target.value)} type='text' name='image' placeholder="Image URL" />
-                <div className="inputsContainer">
+                <div className="ingredientsContainer">
                     {ingredients.map(row => (
                         <div key={row.id} >
                             <input onChange={e=> {row.text = e.target.value }} className="ingredient" type="text" name={`ingredient${row.id}`} placeholder={`Ingredient ${row.id}`}></input>
@@ -68,7 +68,8 @@ export default function NewRecipeForm({addNewRecipe}) {
                             >Remove</button>
                         </div>
                     ))}
-                <div className="inputsContainer">
+                </div>
+                <div className="directionsContainer">
                     {directions.map(row => (
                         <div key={row.id} >
                             <input onChange={e=> {row.text = e.target.value}} className="direction" type="text" name={`direction${row.id}`} placeholder={`Step ${row.id}`}></input>
@@ -78,7 +79,6 @@ export default function NewRecipeForm({addNewRecipe}) {
                             >Remove</button>
                         </div>
                     ))}
-                </div>
                 </div>
                 <button type="submit">Add to CookBook</button>
             </form>
