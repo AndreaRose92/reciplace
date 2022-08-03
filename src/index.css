@@ -100,7 +100,7 @@ div {
   display: flexbox;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
+  text-align: left;
   width: fit-content;
   height: 100vh;
 }
@@ -123,13 +123,13 @@ div {
   text-align: left;
   max-width: 40%;
   margin: auto;
-  padding-left: 15%;
+  padding-left: 40%;
 }
 .directionList {
   text-align: left;
   max-width: 40%;
   margin: auto;
-  padding-left: 15%;
+  padding-left: 40%;
 }
 
 @media (min-width: 768px) {
