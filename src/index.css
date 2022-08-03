@@ -1,8 +1,4 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-
-
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,18 +7,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
 div {
   background-color: #FFF2E6;
 }
-
 .ingredientsContainer {
   float: left;
   margin-right: 10px;
@@ -35,29 +26,23 @@ div {
   height: fit-content;
   width: fit-content;
 }
-
 .listInputs {
   margin: 5px;
   height: max-content;
   width: max-content;
 }
-
-.ingredient
-.direction {
+.ingredient .direction {
   margin: 0px;
 }
-
 .singleInputs {
   margin: 5px;
 }
-
 .add {
   margin: auto;
   margin-top: 20px;
   background-color: tomato;
 
 }
-
 .recipeForm {
   display: flexbox;
   margin-left: auto;
@@ -67,24 +52,18 @@ div {
   height: 100vh;
   width: fit-content;
 }
-
 .navbar {
   background-color: bisque;
 }
 .cards {
   list-style: none;
+  width: 100vw;
+  height: 100vh;
 }
-/* .card {
-  margin: 1rem;
-  border: 2rem;
-  box-shadow: black 2rem, 4rem;
-} */
-
 .card img {
   width: 100%;
   max-height: 20rem;
-} 
-
+}
 .card {
   text-align: center;
   border: grey solid 1px;
@@ -95,7 +74,6 @@ div {
   margin: 1rem 2rem;
   box-shadow: 4px 6px brown
 }
-
 .recipePage {
   display: flexbox;
   margin-left: auto;
@@ -131,30 +109,25 @@ div {
   margin: auto;
   padding-left: 55%;
 }
-
 @media (min-width: 768px) {
   .cards {
     display: flex;
     flex-wrap: wrap;
   }
-
   .card {
     width: calc(33% - 2rem);
   }
 }
-
 @media (min-width: 1024px) {
   .card {
     width: calc(25% - 2rem);
   }
 }
-
 @media (min-width: 1200px) {
   .card {
     width: calc(20% - 2rem);
   }
 }
-
 .about {
   text-align: center;
   display: block;
@@ -165,34 +138,32 @@ div {
   background-repeat: no-repeat;
   background-position: left; */
 }
-
 small {
   font-family: 'Great Vibes', cursive;
-  color:chocolate;
+  color: chocolate;
   font-size: 20px;
 }
-
-
-.home{
+.home {
   background-image: url("./6.png");
-  height: 1000px;
+  height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
 }
-h1{
+h1 {
   font-family: 'Great Vibes', cursive;
   color: brown;
   width: 800px;
   line-height: 600px;
   text-align: center;
-  position:absolute; 
-  left:700px; 
-  top:20px; 
+  float: right;
+  /* position:absolute;  */
+  /* left:700px;  */
+  /* top:20px;  */
   font-size: 70px;
 }
-h2{
+h2 {
   font-family: 'Great Vibes', cursive;
   color: brown;
   line-height: 230x;
@@ -200,25 +171,22 @@ h2{
   vertical-align: text-top;
   font-size: 40px;
 }
-h4{
+h4 {
   font-family: 'Great Vibes', cursive;
   color: brown;
   font-size: 40px;
   line-height: 5px;
 }
-
-link{
-  color:white;
+link {
+  color: white;
 }
 .searchbar {
   position: absolute;
   top: 5px;
   left: 600px;
-  
-}
 
+}
 .searchbar input {
   height: 20px;
   width: 240px;
 }
-

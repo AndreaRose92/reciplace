@@ -20,6 +20,7 @@ export default function Search({filterType, handleSearch}) {
                 <option value='lunch'>Lunch</option>
                 <option value='dinner'>Dinner</option>
                 <option value='dessert'>Dessert</option>
+                <option value='snack'>Snack</option>
             </select>
             <input
             type="text"
