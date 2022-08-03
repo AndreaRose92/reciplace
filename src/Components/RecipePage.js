@@ -6,8 +6,8 @@ export default function RecipePage({recipes}) {
 
     const params = useParams()
     const recipe = recipes[params.recipeID]
-    const renderIngredients = recipe.ingredients.map(ingredient => <p key={Math.random()} >{ingredient}</p>)
-    const renderDirections = recipe.directions.map(directions => <p key={Math.random()} >{directions}</p>)
+    const renderIngredients = recipe.ingredients.map(ingredient => <li key={Math.random()} >{ingredient}</li>)
+    const renderDirections = recipe.directions.map(directions => <li key={Math.random()} >{directions}</li>)
 
     return (
         <div className="card">
@@ -16,7 +16,7 @@ export default function RecipePage({recipes}) {
             <h3>Ingredients</h3>
             <ul>{renderIngredients}</ul>
             <h3>Directions</h3>
-            <ul>{renderDirections}</ul>
+            <ol>{renderDirections}</ol>
         </div>
     )
 }
