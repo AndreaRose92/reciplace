@@ -16,7 +16,7 @@ export default function RecipeCards({recipes}) {
         )
 
     return (
-        <div className="cards" >{renderThumbnails}</div>
+        <div className="cards">{renderThumbnails}</div>
     )
 }
 
