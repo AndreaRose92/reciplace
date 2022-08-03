@@ -48,6 +48,7 @@ export default function NewRecipeForm({addNewRecipe}) {
     return (
         <div>
             <form onSubmit={handleSubmit} className="recipeForm">
+                <h4>New Recipe</h4>
                 <input onChange={e=>setRecipeTitle(e.target.value)} type="text" name="title" placeholder="Recipe Title" /><br/>
                 <label htmlFor="meal">Meal: </label>
                 <select onChange={e=>setRecipeMeal(e.target.value)} id="meal" name="meal">
