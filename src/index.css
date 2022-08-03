@@ -74,12 +74,28 @@ div {
 .cards {
   list-style: none;
 }
-.card {
+/* .card {
   margin: 1rem;
-}
+  border: 2rem;
+  box-shadow: black 2rem, 4rem;
+} */
+
 .card img {
   width: 100%;
+  max-height: 20rem;
+} 
+
+.card {
+  text-align: center;
+  border: grey solid 1px;
+  padding: 1rem;
+  width: 15rem;
+  height: 25rem;
+  display: inline-grid;
+  margin: 1rem 2rem;
+  box-shadow: 4px 6px brown
 }
+
 @media (min-width: 768px) {
   .cards {
     display: flex;

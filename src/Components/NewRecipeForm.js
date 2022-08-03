@@ -57,6 +57,7 @@ export default function NewRecipeForm({addNewRecipe}) {
                         <option name="lunch">Lunch</option>
                         <option name="dinner">Dinner</option>
                         <option name="dessert">Dessert</option>
+                        <option name="snack">Snack</option>
                     </select><br/>
                     <input className="singleInputs" onChange={e=>setRecipeImage(e.target.value)} type='text' name='image' placeholder="Image URL" />
                 </div>

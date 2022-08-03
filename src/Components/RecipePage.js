@@ -10,7 +10,7 @@ export default function RecipePage({recipes}) {
     const renderDirections = recipe.directions.map(directions => <li key={Math.random()} >{directions}</li>)
 
     return (
-        <div className="card">
+        <div classname="recipePage">
             <h2>{recipe.name}</h2>
             <img src={recipe.image} alt={recipe.name}></img>
             <h3>Ingredients</h3>
