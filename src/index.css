@@ -21,10 +21,12 @@ div {
   background-color: #FFF2E6;
 }
 
-.inputsContainer {
-  margin: 0px;
+/* .ingredientsContainer {
+  float: left;
 }
-
+.directionsContainer {
+  float: right;
+} */
 
 .ingredient
 .direction {
@@ -39,6 +41,8 @@ input {
   display: flexbox;
   text-align: center;
   padding: 10px;
+  height: 100vh;
+  width: 50vw;
 }
 
 .navbar {
