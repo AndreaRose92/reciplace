@@ -1,11 +1,12 @@
 
 
 import { Route, Switch } from "react-router-dom"
+import { useEffect, useState } from "react";
 import NavBar from "./NavBar"
 import Homepage from './Homepage';
 import RecipeList from './RecipeList';
 import NewRecipeForm from './NewRecipeForm';
-import { useEffect, useState } from "react";
+import About from './About'
 import RecipePage from "./RecipePage";
 
 function App() {
@@ -34,6 +35,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Homepage />
+          </Route>
+          <Route exact path="/about">
+            <About />
           </Route>
           <Route path="/recipes">
             <RecipeList recipes={recipes} />

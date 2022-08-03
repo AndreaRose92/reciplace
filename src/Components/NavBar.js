@@ -22,6 +22,14 @@ export default function NavBar() {
                 Home
             </NavLink>
             <NavLink
+                to='/about'
+                exact
+                style={linkStyles}
+                activeStyle={{background: "crimson"}}
+            >
+                About
+            </NavLink>
+            <NavLink
                 to='/recipes'
                 exact
                 style={linkStyles}
