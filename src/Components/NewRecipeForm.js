@@ -1,5 +1,6 @@
 
 import { useState } from "react"
+import { useHistory } from "react-router-dom"
 import '../styles/NewRecipeForm.css'
 
 export default function NewRecipeForm({ addNewRecipe }) {
@@ -12,6 +13,7 @@ export default function NewRecipeForm({ addNewRecipe }) {
     const [ingredientsArray, setIngredientsArray] = useState([])
     const [directionsArray, setDirectionsArray] = useState([])
 
+    const history = useHistory()
     const newRecipe = {
         "name": recipeTitle,
         "meal": recipeMeal,
@@ -43,6 +45,7 @@ export default function NewRecipeForm({ addNewRecipe }) {
         addNewRecipe(newRecipe)
         setDirections([{ id: 1, text: '' }])
         setIngredients([{ id: 1, text: '' }])
+        history.push('/recipes')
     }
 
     return (
