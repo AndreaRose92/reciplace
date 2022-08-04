@@ -26,7 +26,7 @@ export default function RecipeList({recipes}) {
     const filteredRecipes = mealsbyType.filter(recipe => recipe.ingredients.some(ingredient => ingredient.toLowerCase().includes(searchString.toLowerCase()) ))
 
     return (
-        <div className="cards">
+        <div className="cardContainer">
             <Search handleSearch={handleSearch} filterType={handleChange} />
             <RecipeCards recipes={filteredRecipes}/>
             <Route path={`${match.url}/:recipeID`}>
