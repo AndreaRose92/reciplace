@@ -2,10 +2,10 @@
 import React, { useState } from "react"
 import '../styles/Search.css'
 
-export default function Search({filterType, handleSearch}) {
+export default function Search({ filterType, handleSearch }) {
 
     const [search, setSearch] = useState('')
-    
+
     const searchSubmit = (e) => {
         e.preventDefault()
         handleSearch(search)
@@ -13,9 +13,9 @@ export default function Search({filterType, handleSearch}) {
 
 
     return (
-        
+
         <form onSubmit={searchSubmit} className="searchbar">
-            <select onChange={e=>filterType(e.target.value)} name="type">
+            <select onChange={e => filterType(e.target.value)} name="type">
                 <option value='All'>Filter by Meal</option>
                 <option value='breakfast'>Breakfast</option>
                 <option value='lunch'>Lunch</option>
@@ -24,13 +24,13 @@ export default function Search({filterType, handleSearch}) {
                 <option value='snack'>Snack</option>
             </select>
             <input
-            type="text"
-            id="search"
-            placeholder="Type an ingredient to search..."
-            onChange={e=>setSearch(e.target.value)}
+                type="text"
+                id="search"
+                placeholder="Type an ingredient to search..."
+                onChange={e => setSearch(e.target.value)}
             />
             <button type="submit" >search</button>
-            
+
         </form>
     )
 }

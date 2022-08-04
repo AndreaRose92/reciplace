@@ -2,10 +2,10 @@
 import { useState } from "react"
 import '../styles/NewRecipeForm.css'
 
-export default function NewRecipeForm({addNewRecipe}) {
+export default function NewRecipeForm({ addNewRecipe }) {
 
-    const [ingredients, setIngredients] = useState([{id: 1, text: ''}])
-    const [directions, setDirections] = useState([{id: 1, text: ''}])
+    const [ingredients, setIngredients] = useState([{ id: 1, text: '' }])
+    const [directions, setDirections] = useState([{ id: 1, text: '' }])
     const [recipeTitle, setRecipeTitle] = useState('')
     const [recipeMeal, setRecipeMeal] = useState('breakfast')
     const [recipeImage, setRecipeImage] = useState('https://thumbs.dreamstime.com/b/white-empty-dinner-plate-blue-border-wooden-table-93048343.jpg')
@@ -25,7 +25,7 @@ export default function NewRecipeForm({addNewRecipe}) {
     }
     const addIngredient = e => {
         e.preventDefault()
-        setIngredients([...ingredients, {id: ingredients.length+1, text: ''}])
+        setIngredients([...ingredients, { id: ingredients.length + 1, text: '' }])
     }
     const removeDirection = e => {
         e.preventDefault();
@@ -33,7 +33,7 @@ export default function NewRecipeForm({addNewRecipe}) {
     }
     const addDirection = e => {
         e.preventDefault()
-        setDirections([...directions, {id: directions.length+1, text: ''}])
+        setDirections([...directions, { id: directions.length + 1, text: '' }])
     }
     const handleSubmit = e => {
         e.preventDefault()
@@ -41,36 +41,36 @@ export default function NewRecipeForm({addNewRecipe}) {
         ingredients.forEach(ingredient => setIngredientsArray(ingredientsArray.push(ingredient.text)))
         directions.forEach(direction => setDirectionsArray(directionsArray.push(direction.text)))
         addNewRecipe(newRecipe)
-        setDirections([{id: 1, text: ''}])
-        setIngredients([{id: 1, text: ''}])
+        setDirections([{ id: 1, text: '' }])
+        setIngredients([{ id: 1, text: '' }])
     }
 
     return (
         <div>
             <form onSubmit={handleSubmit} className="recipeForm">
                 <h4>New Recipe</h4>
-                <div >    
-                    <input className="singleInputs" onChange={e=>setRecipeTitle(e.target.value)} type="text" name="title" placeholder="Recipe Title" /><br/>
+                <div >
+                    <input className="singleInputs" onChange={e => setRecipeTitle(e.target.value)} type="text" name="title" placeholder="Recipe Title" /><br />
                     <label htmlFor="meal">Meal: </label>
-                    <select className="singleInputs" onChange={e=>setRecipeMeal(e.target.value)} id="meal" name="meal">
+                    <select className="singleInputs" onChange={e => setRecipeMeal(e.target.value)} id="meal" name="meal">
                         <option name="breakfast">Breakfast</option>
                         <option name="lunch">Lunch</option>
                         <option name="dinner">Dinner</option>
                         <option name="dessert">Dessert</option>
                         <option name="snack">Snack</option>
-                    </select><br/>
-                    <input className="singleInputs" onChange={e=>setRecipeImage(e.target.value)} type='text' name='image' placeholder="Image URL" />
+                    </select><br />
+                    <input className="singleInputs" onChange={e => setRecipeImage(e.target.value)} type='text' name='image' placeholder="Image URL" />
                 </div>
                 <div className="listInputs">
                     <div className="ingredientsContainer">
                         <h3>Ingredients:</h3>
                         {ingredients.map(row => (
                             <div key={row.id} >
-                                <input onChange={e=> {row.text = e.target.value }} className="ingredient" type="text" name={`ingredient${row.id}`} placeholder={`Ingredient ${row.id}`}></input>
-                                <button onClick={(e)=>addIngredient(e)}
+                                <input onChange={e => { row.text = e.target.value }} className="ingredient" type="text" name={`ingredient${row.id}`} placeholder={`Ingredient ${row.id}`}></input>
+                                <button onClick={(e) => addIngredient(e)}
                                 >Add</button>
-                                {row.id > 1 ? <button onClick={(e)=>removeIngredient(e)}
-                                >X</button> : null }
+                                {row.id > 1 ? <button onClick={(e) => removeIngredient(e)}
+                                >X</button> : null}
                             </div>
                         ))}
                     </div>
@@ -78,11 +78,11 @@ export default function NewRecipeForm({addNewRecipe}) {
                         <h3>Directions:</h3>
                         {directions.map(row => (
                             <div key={row.id} >
-                                <input onChange={e=> {row.text = e.target.value}} className="direction" type="text" name={`direction${row.id}`} placeholder={`Step ${row.id}`}></input>
-                                <button onClick={(e)=>addDirection(e)}
+                                <input onChange={e => { row.text = e.target.value }} className="direction" type="text" name={`direction${row.id}`} placeholder={`Step ${row.id}`}></input>
+                                <button onClick={(e) => addDirection(e)}
                                 >Add</button>
-                                {row.id > 1 ? <button onClick={(e)=>removeDirection(e)}
-                                >X</button> : null }
+                                {row.id > 1 ? <button onClick={(e) => removeDirection(e)}
+                                >X</button> : null}
                             </div>
                         ))}
                     </div>

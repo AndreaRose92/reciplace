@@ -2,7 +2,7 @@
 import { useParams } from "react-router-dom"
 import '../styles/RecipePage.css'
 
-export default function RecipePage({recipes}) {
+export default function RecipePage({ recipes }) {
 
     const params = useParams()
     const recipe = recipes[params.recipeID]

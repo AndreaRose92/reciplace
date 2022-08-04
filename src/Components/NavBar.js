@@ -9,7 +9,7 @@ const linkStyles = {
     background: "orange",
     textDecoration: "none",
     color: "white",
-  };
+};
 
 export default function NavBar() {
     return (
@@ -18,7 +18,7 @@ export default function NavBar() {
                 to='/'
                 exact
                 style={linkStyles}
-                activeStyle={{background: "crimson"}}
+                activeStyle={{ background: "crimson" }}
             >
                 Home
             </NavLink>
@@ -26,7 +26,7 @@ export default function NavBar() {
                 to='/about'
                 exact
                 style={linkStyles}
-                activeStyle={{background: "crimson"}}
+                activeStyle={{ background: "crimson" }}
             >
                 About
             </NavLink>
@@ -34,15 +34,15 @@ export default function NavBar() {
                 to='/recipes'
                 exact
                 style={linkStyles}
-                activeStyle={{background: "crimson"}}
+                activeStyle={{ background: "crimson" }}
             >
-                Recipes                
+                Recipes
             </NavLink>
             <NavLink
                 to='/new'
                 exact
                 style={linkStyles}
-                activeStyle={{background: "crimson"}}
+                activeStyle={{ background: "crimson" }}
             >
                 New Recipe
             </NavLink>
