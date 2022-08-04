@@ -1,35 +1,45 @@
-.recipePage {
-    display: flexbox;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    width: fit-content;
-    height: 100vh;
-  }
-  .recipePage h2 {
-    margin-left: 10%;
-  }
-  .fullImage {
-    float: left;
-    max-height: 60%;
-    max-width: 60%;
-    margin-left: 5%;
-  }
-  .listContainer {
-    justify-self: right;
-    justify-content: center;
-    height: fit-content;
-    width: fit-content;
-  }
-  .ingredientList {
-    text-align: left;
-    max-width: 40%;
-    margin: auto;
-    padding-left: 55%;
-  }
-  .directionList {
-    text-align: left;
-    max-width: 40%;
-    margin: auto;
-    padding-left: 55%;
-  }
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  background-image: url('https://images.unsplash.com/photo-1558346648-9757f2fa4474?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFyYmxlJTIwY291bnRlcnRvcHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.right {
+  right: 0;
+  padding-top: 5%;
+  padding-left: 5%;
+  background-image: url('https://wallpaperaccess.com/full/1971376.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.right div {
+  background-color: transparent;
+}
+
+.centered {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centeredimg {
+  position: absolute;
+  left: 25%;
+  top: 20%;
+  max-height: 50%;
+  max-width: 50%;
+}

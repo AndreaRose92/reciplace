@@ -11,18 +11,18 @@ export default function RecipePage({recipes}) {
 
     return (
         <div>
-            <div className="recipePage">
-                <h2>{recipe.name}</h2>
-                <img className="fullImage" src={recipe.image} alt={recipe.name}></img>
-                <div className="listContainer">
-                    <div className="ingredientList">
-                        <h3>Ingredients</h3>
-                        <ul>{renderIngredients}</ul>
-                    </div>
-                    <div className="directionList">
-                        <h3>Directions</h3>
-                        <ol>{renderDirections}</ol>
-                    </div>
+            <div className="split left">
+                <h2 className="centered">{recipe.name}</h2>
+                <img className="centeredimg" src={recipe.image} alt={recipe.name}></img>
+            </div>
+            <div className="split right">
+                <div>
+                    <h3>Ingredients</h3>
+                    <ul>{renderIngredients}</ul>
+                </div>
+                <div>
+                    <h3>Directions</h3>
+                    <ol>{renderDirections}</ol>
                 </div>
             </div>
         </div>
