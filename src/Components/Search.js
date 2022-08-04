@@ -1,5 +1,6 @@
-import React, { useState } from "react"
 
+import React, { useState } from "react"
+import '../styles/Search.css'
 
 export default function Search({filterType, handleSearch}) {
 

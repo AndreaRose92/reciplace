@@ -1,6 +1,7 @@
 
 import { useState } from "react"
 import { Route, useRouteMatch } from "react-router-dom"
+import '../styles/RecipeList.css'
 import RecipeCards from './RecipeCards'
 import RecipePage from "./RecipePage"
 import Search from "./Search"

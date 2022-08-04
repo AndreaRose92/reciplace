@@ -1,6 +1,6 @@
+
 import { useState } from "react"
-
-
+import '../styles/NewRecipeForm.css'
 
 export default function NewRecipeForm({addNewRecipe}) {
 

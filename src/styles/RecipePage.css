@@ -1,0 +1,35 @@
+.recipePage {
+    display: flexbox;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: fit-content;
+    height: 100vh;
+  }
+  .recipePage h2 {
+    margin-left: 10%;
+  }
+  .fullImage {
+    float: left;
+    max-height: 60%;
+    max-width: 60%;
+    margin-left: 5%;
+  }
+  .listContainer {
+    justify-self: right;
+    justify-content: center;
+    height: fit-content;
+    width: fit-content;
+  }
+  .ingredientList {
+    text-align: left;
+    max-width: 40%;
+    margin: auto;
+    padding-left: 55%;
+  }
+  .directionList {
+    text-align: left;
+    max-width: 40%;
+    margin: auto;
+    padding-left: 55%;
+  }

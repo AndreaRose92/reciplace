@@ -1,0 +1,15 @@
+.about {
+    text-align: center;
+    display: block;
+    margin-top: 10%;
+    height: 100vh;
+    width: 100vw;
+    /* background-image: url('./1.png');
+    background-repeat: no-repeat;
+    background-position: left; */
+  }
+  small {
+    font-family: 'Great Vibes', cursive;
+    color: chocolate;
+    font-size: 20px;
+  }

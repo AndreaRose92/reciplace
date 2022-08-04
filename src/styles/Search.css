@@ -1,0 +1,10 @@
+.searchbar {
+    position: absolute;
+    top: 5px;
+    left: 600px;
+  
+  }
+  .searchbar input {
+    height: 20px;
+    width: 240px;
+  }

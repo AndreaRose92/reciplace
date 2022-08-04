@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-
+import '../styles/RecipeCards.css'
 
 export default function RecipeCards({recipes}) {
 
@@ -19,5 +19,3 @@ export default function RecipeCards({recipes}) {
         <div className="cards">{renderThumbnails}</div>
     )
 }
-
-

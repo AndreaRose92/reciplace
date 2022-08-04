@@ -1,6 +1,6 @@
+
 import { useParams } from "react-router-dom"
-
-
+import '../styles/RecipePage.css'
 
 export default function RecipePage({recipes}) {
 

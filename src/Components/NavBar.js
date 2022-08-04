@@ -1,4 +1,6 @@
+
 import { NavLink } from "react-router-dom";
+import '../styles/NavBar.css'
 
 const linkStyles = {
     display: "inline-block",

@@ -1,0 +1,37 @@
+.ingredientsContainer {
+    float: left;
+    margin-right: 10px;
+    height: fit-content;
+    width: fit-content;
+  }
+  .directionsContainer {
+    float: right;
+    margin-left: 10px;
+    height: fit-content;
+    width: fit-content;
+  }
+  .listInputs {
+    margin: 5px;
+    height: max-content;
+    width: max-content;
+  }
+  .ingredient .direction {
+    margin: 0px;
+  }
+  .singleInputs {
+    margin: 5px;
+  }
+  .add {
+    margin: auto;
+    margin-top: 20px;
+    background-color: tomato;
+  }
+  .recipeForm {
+    display: flexbox;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 10px;
+    height: 100vh;
+    width: fit-content;
+  }
