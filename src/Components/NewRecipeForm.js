@@ -12,10 +12,12 @@ export default function NewRecipeForm({ addNewRecipe }) {
     const [recipeImage, setRecipeImage] = useState('https://thumbs.dreamstime.com/b/white-empty-dinner-plate-blue-border-wooden-table-93048343.jpg')
     const [ingredientsArray, setIngredientsArray] = useState([])
     const [directionsArray, setDirectionsArray] = useState([])
+    // const recipeTitle = useRef('')
+
 
     const history = useHistory()
     const newRecipe = {
-        "name": recipeTitle,
+        "name": recipeTitle.current,
         "meal": recipeMeal,
         "image": recipeImage,
         "ingredients": ingredientsArray,
@@ -43,6 +45,7 @@ export default function NewRecipeForm({ addNewRecipe }) {
         ingredients.forEach(ingredient => setIngredientsArray(ingredientsArray.push(ingredient.text)))
         directions.forEach(direction => setDirectionsArray(directionsArray.push(direction.text)))
         addNewRecipe(newRecipe)
+        // console.log(newRecipe)
         setDirections([{ id: 1, text: '' }])
         setIngredients([{ id: 1, text: '' }])
         history.push('/recipes')
@@ -53,7 +56,7 @@ export default function NewRecipeForm({ addNewRecipe }) {
             <form onSubmit={handleSubmit} className="recipeForm">
                 <h4>New Recipe</h4>
                 <div >
-                    <input className="singleInputs" onChange={e => setRecipeTitle(e.target.value)} type="text" name="title" placeholder="Recipe Title" /><br />
+                    <input className="singleInputs" onChange={e => {setRecipeTitle(e.target.value)}} type="text" name="title" placeholder="Recipe Title" /><br />
                     <label htmlFor="meal">Meal: </label>
                     <select className="singleInputs" onChange={e => setRecipeMeal(e.target.value)} id="meal" name="meal">
                         <option name="breakfast">Breakfast</option>

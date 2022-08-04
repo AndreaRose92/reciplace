@@ -30,7 +30,7 @@ export default function RecipeList({ recipes }) {
             <Search handleSearch={handleSearch} filterType={handleChange} />
             <RecipeCards recipes={filteredRecipes} />
             <Route path={`${match.url}/:recipeID`}>
-                <RecipePage recipes={filteredRecipes} />
+                <RecipePage />
             </Route>
         </div>
     )

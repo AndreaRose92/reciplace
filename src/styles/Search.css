@@ -5,7 +5,18 @@
 
 }
 
+.searchbar select {
+  height: 25px;
+  margin-right: 5px;
+}
+
 .searchbar input {
-  height: 20px;
+  height: 21px;
   width: 240px;
+  margin-right: 5px;
+}
+
+.searchbar button {
+  background-color: orange;
+  border-radius: 10%;
 }

@@ -1,3 +1,18 @@
 .navbar {
   background-color: bisque;
 }
+
+.linkStyles {
+  border-bottom-left-radius: 12.5%;
+  border-bottom-right-radius: 12.5%;
+  display: inline-block;
+  padding: 12px;
+  margin: 0 6px 6px;
+  background: orange;
+  text-decoration: none;
+  color: white;
+};
+
+.active {
+  background: crimson;
+}

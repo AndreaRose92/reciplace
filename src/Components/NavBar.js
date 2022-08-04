@@ -2,22 +2,13 @@
 import { NavLink } from "react-router-dom";
 import '../styles/NavBar.css'
 
-const linkStyles = {
-    display: "inline-block",
-    padding: "12px",
-    margin: "0 6px 6px",
-    background: "orange",
-    textDecoration: "none",
-    color: "white",
-};
-
 export default function NavBar() {
     return (
         <div className="navbar">
             <NavLink
                 to='/'
                 exact
-                style={linkStyles}
+                className='linkStyles'
                 activeStyle={{ background: "crimson" }}
             >
                 Home
@@ -25,7 +16,7 @@ export default function NavBar() {
             <NavLink
                 to='/about'
                 exact
-                style={linkStyles}
+                className='linkStyles'
                 activeStyle={{ background: "crimson" }}
             >
                 About
@@ -33,7 +24,7 @@ export default function NavBar() {
             <NavLink
                 to='/recipes'
                 exact
-                style={linkStyles}
+                className='linkStyles'
                 activeStyle={{ background: "crimson" }}
             >
                 Recipes
@@ -41,7 +32,7 @@ export default function NavBar() {
             <NavLink
                 to='/new'
                 exact
-                style={linkStyles}
+                className='linkStyles'
                 activeStyle={{ background: "crimson" }}
             >
                 New Recipe
