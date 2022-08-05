@@ -7,11 +7,12 @@
   border-bottom-right-radius: 12.5%;
   display: inline-block;
   padding: 12px;
-  margin: 0 6px 6px;
+  margin-top: 0;
+  margin-left: 15px;
   background: orange;
   text-decoration: none;
   color: white;
-};
+}
 
 .active {
   background: crimson;

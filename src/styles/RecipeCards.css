@@ -20,7 +20,7 @@
   height: 25rem;
   display: inline-grid;
   margin: 1rem 2rem;
-  box-shadow: 4px 6px brown
+  box-shadow: 4px 6px brown;
 }
 
 @media (min-width: 768px) {

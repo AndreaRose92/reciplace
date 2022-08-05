@@ -1,37 +1,38 @@
-
-import { useState } from "react"
-import { Route, useRouteMatch } from "react-router-dom"
-import '../styles/RecipeList.css'
-import RecipeCards from './RecipeCards'
-import RecipePage from "./RecipePage"
-import Search from "./Search"
-
+import { useState } from 'react';
+import { Route, useRouteMatch } from 'react-router-dom';
+import '../styles/RecipeList.css';
+import RecipeCards from './RecipeCards';
+import RecipePage from './RecipePage';
+import Search from './Search';
 
 export default function RecipeList({ recipes }) {
+  const match = useRouteMatch();
+  const [searchString, setSearch] = useState('');
+  let [mealType, setMealType] = useState('All');
 
-    const match = useRouteMatch()
-    const [searchString, setSearch] = useState("")
-    let [mealType, setMealType] = useState('All')
+  function handleSearch(data) {
+    setSearch(data);
+  }
+  function handleChange(data) {
+    setMealType(data);
+  }
 
-    function handleSearch(data) {
-        setSearch(data)
-    }
-    function handleChange(data) {
-        setMealType(data)
-    }
-
-    const mealsbyType = recipes.filter(recipe =>
-        mealType === 'All' ? true : recipe.meal === mealType
+  const mealsbyType = recipes.filter((recipe) =>
+    mealType === 'All' ? true : recipe.meal === mealType
+  );
+  const filteredRecipes = mealsbyType.filter((recipe) =>
+    recipe.ingredients.some((ingredient) =>
+      ingredient.toLowerCase().includes(searchString.toLowerCase())
     )
-    const filteredRecipes = mealsbyType.filter(recipe => recipe.ingredients.some(ingredient => ingredient.toLowerCase().includes(searchString.toLowerCase())))
+  );
 
-    return (
-        <div className="cardContainer">
-            <Search handleSearch={handleSearch} filterType={handleChange} />
-            <RecipeCards recipes={filteredRecipes} />
-            <Route path={`${match.url}/:recipeID`}>
-                <RecipePage />
-            </Route>
-        </div>
-    )
+  return (
+    <div className='cardContainer'>
+      <Search handleSearch={handleSearch} filterType={handleChange} />
+      <RecipeCards recipes={filteredRecipes} />
+      <Route path={`${match.url}/:recipeID`}>
+        <RecipePage />
+      </Route>
+    </div>
+  );
 }
