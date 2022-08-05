@@ -10,8 +10,8 @@ import RecipePage from './RecipePage';
 function App() {
   const [recipes, setRecipes] = useState([]);
 
-  // const url = `https://reciplace.herokuapp.com/recipes`
-  const url = `http://localhost:3000/recipes`;
+  const url = `https://reciplace.herokuapp.com/recipes`
+//   const url = `http://localhost:3000/recipes`;
 
   useEffect(() => {
     fetch(`${url}`)
