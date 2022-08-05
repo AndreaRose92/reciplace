@@ -23,7 +23,7 @@ export default function RecipeList({ recipes }) {
   const filteredRecipes = mealsbyType.filter((recipe) =>
     recipe.ingredients.some((ingredient) =>
       ingredient.toLowerCase().includes(searchString.toLowerCase())
-    )
+    ) || recipe.name.toLowerCase().includes(searchString.toLowerCase())
   );
 
   return (
